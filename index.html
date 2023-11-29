@@ -1,55 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="js/bootstrap.bundle.min.js"></script> 
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/tags.js"></script>
     <title>SOI Learning Portal</title>
+
     <style>
-        .bggradient{
+        .bggradient {
             background: linear-gradient(to right, #4e62c8, #d900ff);
         }
+
+        .bi-star {
+            margin-left: auto;
+        }
+
+        .online {
+        border: 2px solid green;
+        }
+
+      
+        .offline {
+        border: 2px solid grey;
+        }
+
     </style>
 </head>
+
 <body>
-    
+
        
     <nav class="navbar navbar-expand-lg navbar-white bg-white">
         <div class="container-fluid">
+
             <a class="navbar-brand text-dark" style="font-weight: bold;" href="#"><i class="bi bi-code-square" style="color: #ff0000;"></i> SOI Learning Portal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
                 <i class="bi bi-list text-dark"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active text-secondary fw-bold" href="index.html">About</a></li>
-                    <li class="nav-item d-lg-none">
-                        <div class="d-flex align-items-center">
-                            <a class="nav-link text-secondary" href="#">
-                                Contact
-                            </a>
-                            <span class="d-inline-block mx-3">
-                                <i class="bi bi-bell bg-light text-black rounded-circle p-2 shadow-sm" style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;"></i>
-                            </span>
-                            <img src="images/darwizzy.png" alt="avatar" style="width:35px; height: 35px; border: 2px solid rgb(47, 248, 2) shadow-sm" class="rounded-pill border border-success">
-                        </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-secondary " href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Courses
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">HTML</a></li>
+                            <li><a class="dropdown-item" href="#">CSS</a></li>
+                            <li><a class="dropdown-item" href="#">PHP</a></li>
+                            <li><a class="dropdown-item" href="#">JavaScript</a></li>
+                            <li><a class="dropdown-item" href="#">Python</a></li>
+                            <li><a class="dropdown-item" href="#">Java</a></li>
+                            <li><a class="dropdown-item" href="#">iOS</a></li>
+                            <li><a class="dropdown-item" href="#">React</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-secondary" href="#">Courses</a></li>
-                    <form class="d-flex">
-                        <div class="input-group search-box">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-dark" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
+                    
                 </ul>
+                <form class="d-flex">
+                    <div class="input-group search-box">
+                        <input id="tagsInput" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+                        <button id="tagsInput" class="btn btn-outline-dark" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="d-flex">
+                    <div class="ms-3 position-relative">
+                        <a href="#" class="text-dark text-decoration-none" id="notificationsToggle">
+                            <i class="bi bi-bell bg-light text-black rounded-circle p-2 shadow-sm"
+                            style="width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;"></i>                        </a>
+                        <div id="notificationsDropdown" class="dropdown-menu" style="display: none; left: unset; right: 0;">
+                            <h6 class="dropdown-header">Unread Notifications</h6>
+                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="#"></a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">Read Notifications</h6>
+                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="#"></a>
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <img src="images/darwizzy.png" alt="avatar"
+                            style="width:35px; height: 35px;"
+                            class="online">
+                    </div>
             </div>
+            
+            
+            
         </div>
     </nav>
 
@@ -109,24 +160,33 @@
             </div>
         </div>
         </div>
-    
+
     <div class="container mt-4">
         <h3>Featured Courses</h3>
         <br>
-        <div class="row">
-            <div class="col-md-3">
+
+        <div id="courseCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                         <div class="col-md-3">
                 <div class="card">
                     <img src="images/card1.jpg" class="card-img-top" alt="html">
                     <div class="card-body">
                         <h5 class="card-title">Introduction to HTML and CSS</h5>
                         <p class="card-text"><i class="bi bi-clock"></i> 2h 45m</p>
                     </div>
-                    <div class="card-footer">
-                        <i class="bi bi-person-circle"></i> Azhar Kamar
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Julia Lee
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>
-    
+
             <div class="col-md-3">
                 <div class="card">
                     <img src="images/card2.png" class="card-img-top" alt="uiux">
@@ -134,8 +194,13 @@
                         <h5 class="card-title">User Experience and Interface Design</h5>
                         <p class="card-text"><i class="bi bi-clock"></i> 2h 30m</p>
                     </div>
-                    <div class="card-footer">
-                        <i class="bi bi-person-circle"></i> Gerald Lim
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Gerald Lim
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,8 +212,13 @@
                         <h5 class="card-title">Front-End Development with JavaScript</h5>
                         <p class="card-text"><i class="bi bi-clock"></i> 4h 30m</p>
                     </div>
-                    <div class="card-footer">
-                        <i class="bi bi-person-circle"></i> Amran Mohamed
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Amran Mohammed
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,16 +230,109 @@
                         <h5 class="card-title">Digital Illustrations with Adobe Photoshop</h5>
                         <p class="card-text"><i class="bi bi-clock"></i> 2h 15m</p>
                     </div>
-                    <div class="card-footer">
-                        <i class="bi bi-person-circle"></i> Larry Loh
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Larry Loh
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>
+
+                    </div>
+                </div>
+
+    
+                <div class="carousel-item">
+                    <div class="row">
+                         <div class="col-md-3">
+                <div class="card">
+                    <img src="images/card4.jpg" class="card-img-top" alt="photoshop">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital Illustrations with Adobe Photoshop</h5>
+                        <p class="card-text"><i class="bi bi-clock"></i> 2h 15m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Kong Chee Chong
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/card4.jpg" class="card-img-top" alt="photoshop">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital Illustrations with Adobe Photoshop</h5>
+                        <p class="card-text"><i class="bi bi-clock"></i> 2h 15m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Stanley Tan
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/card4.jpg" class="card-img-top" alt="photoshop">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital Illustrations with Adobe Photoshop</h5>
+                        <p class="card-text"><i class="bi bi-clock"></i> 2h 15m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Aisha Zain
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/card4.jpg" class="card-img-top" alt="photoshop">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital Illustrations with Adobe Photoshop</h5>
+                        <p class="card-text"><i class="bi bi-clock"></i> 2h 15m</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-person-circle"></i> Jack Lim
+                        </div>
+                        <div>
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#courseCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#courseCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
-      
 
-    <footer class="bg-transparent mt-4 pt-4">
+        <footer class="bg-transparent mt-4 pt-4">
         <hr class="my-4">
         <div class="container">
             <div class="row">
@@ -186,5 +349,43 @@
         </div>
         
     </footer>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="notificationsDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Notifications
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="notificationsDropdown">
+            <!-- Add your notifications here -->
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="js/tags.js"></script>
+    <script>
+        function toggleAvatarStatus() {
+            var avatar = document.getElementById('avatar');
+            avatar.classList.toggle('offline');
+        }
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $("#navbarDropdown").click(function () {
+                $(".dropdown-menu").slideToggle();
+            });
+
+            $('#searchBar').autocomplete({
+                source: searchTags
+            });
+        });
+
+        function addToBookmarks(cardId) {
+            // Add logic to add the selected card to bookmarks offcanvas
+        }
+    </script>
+
 </body>
+
 </html>
